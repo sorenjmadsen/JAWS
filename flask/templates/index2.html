@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row">
+        <div class="six columns">
+            <body>
+                <h5>Devices Connected</h5>
+                <table>
+                    <thead>
+                        <tr>
+                            {% for header in headings %}
+                            <th>{{ header }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for row in data %}
+                        <tr>
+                            {% for cell in row %}
+                            <td>
+                                {{ cell }}
+                            </td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </body>
+        </div>
+        <div class="six columns">
+            <div class="u-text-center">
+                <h5>Alert Status</h5>
+                {{ alert }} 
+                <h5></h5>
+                <!--
+                <form action="/cycle/" method="post">
+                    <button name="stat_cycle" type="submit">Cycle Status</button>
+                </form>
+                <h5></h5>
+                -->
+                <h5>Attack Log</h5>
+                <table>
+                    <thead>
+                        <tr>
+                            {% for header in logHead %}
+                            <th>{{ header }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for row in logData %}
+                        <tr>
+                            {% for cell in row %}
+                            <td>
+                                {{ cell }}
+                            </td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
